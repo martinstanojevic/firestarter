@@ -21,6 +21,7 @@ The project is organized following recommendations from the [Saas Starter Kit's 
 - [ ] Allow database queries
 - [ ] Write Firestore hooks
 - [ ] Add steps to get started to this README
+- [ ] Improve loadings states (add skeleton loaders)
 - [ ] Improve error handling (better Toast notifications)
 - [ ] Allow Email/Password authentication
 - [ ] Improve landing page

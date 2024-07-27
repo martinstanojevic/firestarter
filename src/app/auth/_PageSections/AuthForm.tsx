@@ -20,15 +20,15 @@ interface AuthFormPropsI {
 
 export default function AuthForm({ submitText }: AuthFormPropsI) {
   const router = useRouter();
-  const auth = useAuth();
+  const { user, loading } = useAuth();
 
   useEffect(() => {
-    if (auth.user) {
+    if (user) {
       router.push(appRoutes.home.link);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auth.user]);
+  }, [user]);
 
   const form = useForm<EmailFormValues>({
     resolver: zodResolver(EmailFormSchema),
@@ -52,6 +52,10 @@ export default function AuthForm({ submitText }: AuthFormPropsI) {
   const handleGoogleSignIn = async () => {
     await googleLogin();
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
