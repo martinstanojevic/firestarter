@@ -20,11 +20,7 @@ const Employee = ({ employeeId }: { employeeId: string }) => {
 
   return (
     <DataView
-      heading={(item: Employee) => (
-        <span>
-          {item.firstName} {item.lastName}{' '}
-        </span>
-      )}
+      heading={(item: Employee) => `${item.firstName} ${item.lastName}`}
       dataPath={`employee/${employeeId}`}
       editDataForm={EmployeeForm}
       dataRows={dataRows}

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { Flame } from 'lucide-react';
-import { siteConfig } from '@/lib/config';
+
+import { siteConfig, appRoutes } from '@/lib/config';
 
 export const MainLogoText = () => {
   return (
-    <Link href="/" className="items-center space-x-1 md:flex">
+    <Link href={appRoutes.home.link} className="items-center space-x-1 md:flex">
       <Flame color="#FF006E" />
       <span className="hidden md:inline-block">{siteConfig.altName}</span>
     </Link>
@@ -13,7 +14,7 @@ export const MainLogoText = () => {
 
 export const MainLogoIcon = () => {
   return (
-    <Link href="/" className="w-4 h-4">
+    <Link href={appRoutes.home.link} className="w-4 h-4">
       <Flame />
     </Link>
   );
